@@ -1,0 +1,48 @@
+body{
+    background-color: lightgray;
+    --lr_margin: 4%;
+
+    margin-left: var(--lr_margin);
+    margin-right: var(--lr_margin);
+}
+
+.header{
+    --lr_margin: 20%;
+
+    padding: 2%;
+    border-radius: 100px;
+    margin-left: var(--lr_margin);
+    margin-right: var(--lr_margin);
+
+    background-color: aquamarine;
+    text-align: center;
+}
+
+
+
+.requirements .point{
+    font-weight: bold;
+}
+
+footer{
+    padding-top: 2%;
+    text-align: center;
+}
+
+.section{
+    display: flex;
+}
+
+.section .right h3{
+    margin: 0%;
+    margin-left: 3%;
+
+}
+
+.section .left, .section .right{
+    width: 50%;
+}
+
+.section .left video{
+    width: 90%;
+}

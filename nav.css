@@ -1,0 +1,21 @@
+nav{
+    --lr_margin: 3%;
+
+    margin-left: var(--lr_margin);
+    margin-right: var(--lr_margin);
+
+    display: flex;
+    justify-content: space-between;
+}
+#items{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    vertical-align: middle;
+    text-align: right;
+}
+
+nav #items a{
+    
+    margin-left: 4%;
+}
