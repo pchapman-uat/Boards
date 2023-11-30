@@ -3,6 +3,11 @@ const pages = [
     {name: "GP Board", path: "boards/GP.html", id:"GP"},
 ]
 
+const git_buttons = [
+    {name: "ACS Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/ACS.html", id: "ACS"},
+    {name: "GP Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/GP.html", id: "GP"}
+]
+
 function foot_nav(location){
     loadnav(location)
     load_footer()
@@ -59,7 +64,7 @@ function loadnav(location){
     
     // If the URL includes github set the reference to github viewer
     if(url.includes("github")){
-        nav_image.setAttribute("href", "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Splatoon_Bot_Website/blob/main/Website/home.html")
+        nav_image.setAttribute("href", "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/index.html")
         // Call the create buttons functions, which makes the eliments of the buttons based on the array
         createbuttons("items", git_buttons, location)
         alert("Warning! You viewing this on github, and it may cause issues, please notify Squibs if there is an issue")
