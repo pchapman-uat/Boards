@@ -13,6 +13,7 @@ const branches = ["main", "dev"]
 
 function makeGitURL(file){
     let url =  document.URL
+    console.log("Check Me1")
     for(i in branches){
         if(url.includes(branches[i])){
             return `${git_url[0]}${branches[i]}${file}`
