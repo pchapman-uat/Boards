@@ -12,11 +12,11 @@ const git_url = "https://htmlpreview.github.io/?https://github.com/pchapman-uat/
 const branches = ["main", "dev"]
 
 function makeGitURL(file){
-    let url =  document.URL
+    let url =  "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/dev/boards/ACS.html"
     console.log("Check Me1")
     for(i in branches){
         if(url.includes(branches[i])){
-            return `${git_url[0]}${branches[i]}${file}`
+            return `${git_url}${branches[i]}/${file}`
         }
     }
 }
@@ -87,7 +87,7 @@ function loadnav(location){
         alert("Warning! You viewing this on github, and it may cause issues, please notify Squibs if there is an issue")
     } else{
       nav_image.setAttribute("href", `${location}index.html`)
-      createbuttons("items", pages, location, false)  
+      createbuttons("items", pages, location, true)  
     }
 
     
