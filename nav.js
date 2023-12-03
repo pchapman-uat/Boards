@@ -9,7 +9,7 @@ const pages = [
 // ]
 
 const git_url = "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/"
-const branches = ["main"]
+const branches = ["main", "dev"]
 
 function makeGitURL(file){
     let url =  document.url
@@ -24,7 +24,7 @@ function foot_nav(location){
     load_footer()
 }
 
-function createbuttons(parent, array, location){
+function createbuttons(parent, array, location, github){
     console.log(parent)
     console.log(array)
     console.log(location)
@@ -37,7 +37,12 @@ function createbuttons(parent, array, location){
         // Check if location is provided
         if(typeof location !== "undefined"){
             // Set the atribute for the button to be a reference to a different page (used for nav)
-            button.setAttribute("href",`${location}${array[i].path}`)
+            if(github){
+                button.setAttribute("href",`${location}${makeGitURL(array[i].path)}`)
+            } else {
+                button.setAttribute("href",`${location}${array[i].path}`)
+            }
+           
             button.setAttribute("id", array[i].id)
         }
         // set the inner HTML (the text) to the name of the element
@@ -77,11 +82,11 @@ function loadnav(location){
     if(url.includes("github")){
         nav_image.setAttribute("href", "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/index.html")
         // Call the create buttons functions, which makes the eliments of the buttons based on the array
-        createbuttons("items", git_buttons, location)
+        createbuttons("items", pages, location, true)
         alert("Warning! You viewing this on github, and it may cause issues, please notify Squibs if there is an issue")
     } else{
       nav_image.setAttribute("href", `${location}index.html`)
-      createbuttons("items", pages, location)  
+      createbuttons("items", pages, location, false)  
     }
 
     
