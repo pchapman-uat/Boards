@@ -12,7 +12,7 @@ const git_url = "https://htmlpreview.github.io/?https://github.com/pchapman-uat/
 const branches = ["main", "dev"]
 
 function makeGitURL(file){
-    let url =  document.url
+    let url =  document.URL
     for(i in branches){
         if(url.includes(branches[i])){
             return `${git_url[0]}${branches[i]}${file}`
