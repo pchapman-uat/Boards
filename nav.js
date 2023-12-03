@@ -3,11 +3,22 @@ const pages = [
     {name: "GP Board", path: "boards/GP.html", id:"GP"},
 ]
 
-const git_buttons = [
-    {name: "ACS Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/ACS.html", id: "ACS"},
-    {name: "GP Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/GP.html", id: "GP"}
-]
+// const git_buttons = [
+//     {name: "ACS Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/ACS.html", id: "ACS"},
+//     {name: "GP Board", path: "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/main/boards/GP.html", id: "GP"}
+// ]
 
+const git_url = "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/"
+const branches = ["main"]
+
+function makeGitURL(file){
+    let url =  document.url
+    for(i in branches){
+        if(url.includes(branches[i])){
+            return `${git_url[0]}${branches[i]}${file}`
+        }
+    }
+}
 function foot_nav(location){
     loadnav(location)
     load_footer()
