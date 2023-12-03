@@ -13,7 +13,7 @@ const branches = ["main", "dev"]
 
 function makeGitURL(file){
     let url =  "https://htmlpreview.github.io/?https://github.com/pchapman-uat/Boards/blob/dev/boards/ACS.html"
-    console.log("Check Me1")
+    console.log("Check Me2")
     for(i in branches){
         if(url.includes(branches[i])){
             return `${git_url}${branches[i]}/${file}`
@@ -39,7 +39,7 @@ function createbuttons(parent, array, location, github){
         if(typeof location !== "undefined"){
             // Set the atribute for the button to be a reference to a different page (used for nav)
             if(github){
-                button.setAttribute("href",`${location}${makeGitURL(array[i].path)}`)
+                button.setAttribute("href",`${makeGitURL(`${location}${array[i].path}`)}`)
             } else {
                 button.setAttribute("href",`${location}${array[i].path}`)
             }
@@ -87,7 +87,7 @@ function loadnav(location){
         alert("Warning! You viewing this on github, and it may cause issues, please notify Squibs if there is an issue")
     } else{
       nav_image.setAttribute("href", `${location}index.html`)
-      createbuttons("items", pages, location, true)  
+      createbuttons("items", pages, location, false)  
     }
 
     
